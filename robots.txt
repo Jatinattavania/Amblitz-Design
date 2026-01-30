@@ -1,0 +1,11 @@
+# Robots.txt for Amblitz Design
+# https://amblitzdesign.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://amblitzdesign.com/sitemap.xml
+
+# Disallow admin or private areas (if any)
+Disallow: /components/
