@@ -318,21 +318,36 @@ p {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-color: var(--black);
 }
 
-.hero-bg {
+.hero-carousel {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000');
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 
-.hero-bg::after {
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide::after {
     content: '';
     position: absolute;
     top: 0;
@@ -341,13 +356,14 @@ p {
     height: 100%;
     background: linear-gradient(to bottom,
             rgba(10, 10, 10, 0.7) 0%,
-            rgba(10, 10, 10, 0.5) 50%,
-            rgba(10, 10, 10, 0.9) 100%);
+            rgba(10, 10, 10, 0.75) 50%,
+            rgba(10, 10, 10, 0.8) 100%);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     max-width: 900px;
     padding: 0 var(--spacing-md);
@@ -393,6 +409,7 @@ p {
     letter-spacing: 2px;
     text-transform: uppercase;
     animation: bounce 2s infinite;
+    z-index: 2;
 }
 
 .scroll-indicator i {
@@ -476,6 +493,9 @@ p {
     position: relative;
     overflow: hidden;
     aspect-ratio: 4/3;
+    display: block;
+    color: inherit;
+    text-decoration: none;
 }
 
 .project-card img {
@@ -550,6 +570,113 @@ p {
 }
 
 /* ============================================
+   INSTAGRAM FEED
+   ============================================ */
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.instagram-card {
+    background: var(--black);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border: 1px solid rgba(193, 154, 107, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.instagram-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(193, 154, 107, 0.3);
+    border-color: var(--gold);
+}
+
+.instagram-image {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.instagram-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.instagram-card:hover .instagram-image img {
+    transform: scale(1.1);
+}
+
+.instagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.instagram-card:hover .instagram-overlay {
+    opacity: 1;
+}
+
+.instagram-stats {
+    display: flex;
+    gap: var(--spacing-md);
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+.instagram-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.instagram-stats i {
+    color: var(--gold);
+}
+
+.instagram-caption {
+    padding: 1.25rem;
+    background: var(--black-lighter);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.instagram-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.instagram-header i {
+    font-size: 1.2rem;
+}
+
+.instagram-caption p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--gray-light);
+    margin: 0;
+}
+
+/* ============================================
    ABOUT / STATS
    ============================================ */
 .about-grid {
@@ -612,6 +739,196 @@ p {
     color: var(--gray);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* ============================================
+   PROJECT DETAIL PAGE
+   ============================================ */
+
+/* Project Banner */
+.project-banner {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.project-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(10, 10, 10, 0.3) 0%,
+            rgba(10, 10, 10, 0.6) 50%,
+            rgba(10, 10, 10, 0.85) 100%);
+    z-index: 1;
+}
+
+.project-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.project-banner-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 600;
+    color: var(--white);
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.6);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+}
+
+.project-banner-category {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 400;
+    border: 1px solid var(--gold);
+    padding: 0.6rem 1.5rem;
+    background: rgba(170, 137, 1, 0.1);
+}
+
+/* Project Detail Grid */
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+    margin-bottom: var(--spacing-xl);
+}
+
+.project-detail-image {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.project-detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-detail-content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+    color: var(--gray-light);
+}
+
+.project-detail-content p:first-child {
+    font-size: 1.1rem;
+    color: var(--white);
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--black-lighter);
+}
+
+.meta-item {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: flex-start;
+}
+
+.meta-item i {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-top: 0.25rem;
+}
+
+.meta-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.meta-item strong {
+    color: var(--gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.meta-item span {
+    color: var(--gray-light);
+}
+
+/* Project Gallery Grid - True Masonry */
+.project-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 10px;
+    gap: 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.4) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.gallery-item:hover::before,
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
 }
 
 /* ============================================
@@ -939,7 +1256,7 @@ p {
    FOOTER
    ============================================ */
 .footer {
-    background-color: var(--black-light);
+    background-color: var(--black);
     padding: var(--spacing-lg) 0 var(--spacing-md);
 }
 
@@ -1179,6 +1496,28 @@ p {
         padding: var(--spacing-sm);
     }
 
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-banner {
+        height: 50vh;
+        min-height: 350px;
+    }
+
+    .project-detail-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .project-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-meta {
+        grid-template-columns: 1fr;
+    }
+
     .about-grid,
     .contact-grid {
         grid-template-columns: 1fr;
@@ -1227,6 +1566,26 @@ p {
 
     .btn {
         padding: 0.875rem 2rem;
+    }
+
+    .instagram-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-banner {
+        height: 45vh;
+        min-height: 280px;
+        margin-top: 70px;
+    }
+
+    .project-banner-category {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        padding: 0.5rem 1rem;
+    }
+
+    .project-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .stats-grid {

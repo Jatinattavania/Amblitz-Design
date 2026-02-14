@@ -95,7 +95,23 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg"></div>
+        <div class="hero-carousel">
+            <div class="hero-slide active"
+                style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000');">
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000');">
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000');">
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2000');">
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1615875605825-5eb9bb5d52ac?q=80&w=2000');">
+            </div>
+        </div>
         <div class="hero-content">
             <span class="section-subtitle">Welcome to Amblitz Design</span>
             <h1>Crafting <span>Luxurious</span> Living Spaces</h1>
@@ -109,6 +125,55 @@
         <div class="scroll-indicator">
             <span>Scroll</span>
             <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="section" style="background-color: var(--black-light);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Portfolio</span>
+                <h2>Featured Projects</h2>
+                <div class="divider"></div>
+                <p>Explore our collection of meticulously designed spaces that showcase our commitment to excellence and
+                    attention to detail.</p>
+            </div>
+
+            <div class="projects-grid">
+                <a href="pages/project-detail.html?id=modern-luxury-villa" class="project-card" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800"
+                        alt="Modern Living Room">
+                    <div class="project-overlay">
+                        <span>Residential</span>
+                        <h4>Modern Luxury Villa</h4>
+                    </div>
+                </a>
+
+                <a href="pages/project-detail.html?id=contemporary-kitchen" class="project-card" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800"
+                        alt="Elegant Kitchen">
+                    <div class="project-overlay">
+                        <span>Kitchen</span>
+                        <h4>Contemporary Kitchen Design</h4>
+                    </div>
+                </a>
+
+                <a href="pages/project-detail.html?id=serene-master-suite" class="project-card" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800"
+                        alt="Master Bedroom">
+                    <div class="project-overlay">
+                        <span>Bedroom</span>
+                        <h4>Serene Master Suite</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="pages/projects.html" class="btn btn-outline">View All Projects</a>
+            </div>
         </div>
     </section>
 
@@ -126,39 +191,42 @@
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon">
-                        <i class="fas fa-couch"></i>
+                        <i class="fas fa-key"></i>
                     </div>
-                    <h4>Interior Design</h4>
-                    <p>Complete interior design solutions from concept to completion, creating harmonious and functional
-                        spaces.</p>
+                    <h4>Turnkey Project</h4>
+                    <p>End-to-end project management from initial design to final handover, delivering fully furnished
+                        spaces ready to use.</p>
                 </div>
 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">
-                        <i class="fas fa-pencil-ruler"></i>
+                        <i class="fas fa-hammer"></i>
                     </div>
-                    <h4>Space Planning</h4>
-                    <p>Strategic layout design to maximize functionality and flow while maintaining aesthetic appeal.
+                    <h4>Bespoke Furniture</h4>
+                    <p>Custom-designed furniture pieces crafted to your exact specifications, ensuring perfect fit and
+                        unique character.
                     </p>
                 </div>
 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">
-                        <i class="fas fa-palette"></i>
+                        <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h4>Color Consultation</h4>
-                    <p>Expert color selection and coordination to create the perfect atmosphere for your space.</p>
+                    <h4>Design Consultancy</h4>
+                    <p>Expert guidance and creative solutions for your design challenges, from concept development to
+                        material selection.</p>
                 </div>
 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon">
-                        <i class="fas fa-chair"></i>
+                        <i class="fas fa-layer-group"></i>
                     </div>
-                    <h4>Furniture Selection</h4>
-                    <p>Curated furniture sourcing and custom pieces that perfectly complement your design vision.</p>
+                    <h4>Furnishings and Styling</h4>
+                    <p>Complete styling services including accessories, artwork, and finishing touches that bring your
+                        space to life.</p>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <!-- <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
@@ -172,77 +240,7 @@
                     </div>
                     <h4>Commercial Design</h4>
                     <p>Sophisticated commercial spaces that impress clients and inspire productivity.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section class="section" style="background-color: var(--black-light);">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Portfolio</span>
-                <h2>Featured Projects</h2>
-                <div class="divider"></div>
-                <p>Explore our collection of meticulously designed spaces that showcase our commitment to excellence and
-                    attention to detail.</p>
-            </div>
-
-            <div class="projects-grid">
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800"
-                        alt="Modern Living Room">
-                    <div class="project-overlay">
-                        <span>Residential</span>
-                        <h4>Modern Luxury Villa</h4>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800"
-                        alt="Elegant Kitchen">
-                    <div class="project-overlay">
-                        <span>Kitchen</span>
-                        <h4>Contemporary Kitchen Design</h4>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800"
-                        alt="Master Bedroom">
-                    <div class="project-overlay">
-                        <span>Bedroom</span>
-                        <h4>Serene Master Suite</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-3">
-                <a href="pages/projects.html" class="btn btn-outline">View All Projects</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Preview Section -->
-    <section class="section">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800"
-                        alt="Amblitz Design Studio">
-                </div>
-
-                <div class="about-content" data-aos="fade-left">
-                    <span class="section-subtitle">About Us</span>
-                    <h2>Creating Timeless <span class="text-gold">Elegance</span></h2>
-                    <div class="divider" style="margin-left: 0;"></div>
-                    <p>At Amblitz Design, we believe that every space tells a story. With over a decade of experience in
-                        luxury interior design, our team of passionate designers transforms visions into reality.</p>
-                    <p>We combine classical elegance with contemporary aesthetics to create spaces that are not only
-                        visually stunning but also functional and comfortable. Our commitment to quality craftsmanship
-                        and attention to detail sets us apart in the industry.</p>
-                    <a href="pages/about.html" class="btn btn-primary mt-2">Learn More</a>
-                </div>
+                </div> -->
             </div>
 
             <div class="stats-grid" data-aos="fade-up">
@@ -266,8 +264,112 @@
         </div>
     </section>
 
+    <!-- Instagram Feed Section -->
+    <section class="section" style="background-color: var(--black-light);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Follow Us</span>
+                <h2>@amblitzdesign</h2>
+                <div class="divider"></div>
+                <p>Get inspired by our latest projects and design insights on Instagram</p>
+            </div>
+
+            <div class="instagram-grid">
+                <a href="https://instagram.com/amblitzdesign" target="_blank" class="instagram-card" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="instagram-image">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=600"
+                            alt="Instagram Post 1">
+                        <div class="instagram-overlay">
+                            <div class="instagram-stats">
+                                <span><i class="fas fa-heart"></i> 2.4k</span>
+                                <span><i class="fas fa-comment"></i> 89</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instagram-caption">
+                        <div class="instagram-header">
+                            <i class="fab fa-instagram"></i>
+                            <span>amblitzdesign</span>
+                        </div>
+                        <p>Elegant living spaces that tell your unique story ✨</p>
+                    </div>
+                </a>
+
+                <a href="https://instagram.com/amblitzdesign" target="_blank" class="instagram-card" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="instagram-image">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=600"
+                            alt="Instagram Post 2">
+                        <div class="instagram-overlay">
+                            <div class="instagram-stats">
+                                <span><i class="fas fa-heart"></i> 3.1k</span>
+                                <span><i class="fas fa-comment"></i> 124</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instagram-caption">
+                        <div class="instagram-header">
+                            <i class="fab fa-instagram"></i>
+                            <span>amblitzdesign</span>
+                        </div>
+                        <p>Modern luxury meets timeless sophistication 🏡</p>
+                    </div>
+                </a>
+
+                <a href="https://instagram.com/amblitzdesign" target="_blank" class="instagram-card" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <div class="instagram-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=600"
+                            alt="Instagram Post 3">
+                        <div class="instagram-overlay">
+                            <div class="instagram-stats">
+                                <span><i class="fas fa-heart"></i> 2.8k</span>
+                                <span><i class="fas fa-comment"></i> 96</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instagram-caption">
+                        <div class="instagram-header">
+                            <i class="fab fa-instagram"></i>
+                            <span>amblitzdesign</span>
+                        </div>
+                        <p>Kitchen dreams come true 👨‍🍳 #InteriorGoals</p>
+                    </div>
+                </a>
+
+                <a href="https://instagram.com/amblitzdesign" target="_blank" class="instagram-card" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <div class="instagram-image">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=600"
+                            alt="Instagram Post 4">
+                        <div class="instagram-overlay">
+                            <div class="instagram-stats">
+                                <span><i class="fas fa-heart"></i> 3.5k</span>
+                                <span><i class="fas fa-comment"></i> 142</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instagram-caption">
+                        <div class="instagram-header">
+                            <i class="fab fa-instagram"></i>
+                            <span>amblitzdesign</span>
+                        </div>
+                        <p>Serene bedroom sanctuary for ultimate relaxation 🌙</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="https://instagram.com/amblitzdesign" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-instagram"></i> Follow on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
-    <section class="section testimonials">
+    <section class="section testimonials" style="background-color: var(--black);">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">Testimonials</span>
@@ -322,7 +424,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section cta">
+    <!-- <section class="section cta">
         <div class="container">
             <div data-aos="fade-up">
                 <span class="section-subtitle">Start Your Project</span>
@@ -332,7 +434,7 @@
                 <a href="pages/contact.html" class="btn btn-primary">Schedule Consultation</a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>

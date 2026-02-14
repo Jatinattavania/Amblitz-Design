@@ -6,11 +6,32 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize all components
     window.initHeader();
     window.initMobileMenu();
+    initHeroCarousel();
     initScrollAnimations();
     initGalleryLightbox();
     initProjectFilters();
     initSmoothScroll();
 });
+
+/* ============================================
+   HERO CAROUSEL
+   ============================================ */
+function initHeroCarousel() {
+    const slides = document.querySelectorAll('.hero-slide');
+
+    if (slides.length === 0) return;
+
+    let currentSlide = 0;
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Auto-advance every 5 seconds
+    setInterval(nextSlide, 5000);
+}
 
 /* ============================================
    HEADER SCROLL EFFECT
